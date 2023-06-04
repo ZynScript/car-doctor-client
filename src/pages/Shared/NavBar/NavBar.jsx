@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 const NavBar = () => {
   return (
     <div>
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-base-100 h-24">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -27,21 +27,13 @@ const NavBar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
               <li>
-                <a>Item 1</a>
+                <Link to="/">Home</Link>
               </li>
               <li>
-                <a>Parent</a>
-                <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
+                <Link to="/about">About</Link>
               </li>
               <li>
-                <a>Item 3</a>
+                <Link to="/service">Service</Link>
               </li>
             </ul>
           </div>
@@ -52,28 +44,18 @@ const NavBar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <a>Item 1</a>
+              <Link to="/">Home</Link>
             </li>
             <li tabIndex={0}>
-              <details>
-                <summary>Parent</summary>
-                <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
-              </details>
+              <Link to="/about">About</Link>
             </li>
             <li>
-              <a>Item 3</a>
+              <Link to="/service">Service</Link>
             </li>
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Button</a>
+          <Link className="btn btn-outline btn-warning">Appointment</Link>
         </div>
       </div>
     </div>
