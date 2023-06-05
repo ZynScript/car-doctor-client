@@ -5,7 +5,7 @@ import parts from "../../../assets/images/about_us/parts.jpg";
 const About = () => {
   return (
     <div>
-      <div className="hero min-h-screen bg-base-200 py-28">
+      <div className="hero bg-base-200 py-36">
         <div className="hero-content flex-col lg:flex-row justify-center">
           <div className="lg:w-1/2 relative">
             <img src={person} className="w-3/4  rounded-lg shadow-2xl" />
