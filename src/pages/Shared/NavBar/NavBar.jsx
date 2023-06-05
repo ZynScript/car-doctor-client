@@ -1,8 +1,14 @@
-import React from "react";
+import React, {useContext} from "react";
 import logo from "../../../assets/logo.svg";
 import {Link} from "react-router-dom";
+import {AuthContext} from "../../../providers/AuthProvider";
 
 const NavBar = () => {
+  const {user, logOut} = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut();
+  };
   return (
     <div>
       <div className="navbar bg-base-100 h-24">
@@ -32,9 +38,20 @@ const NavBar = () => {
               <li>
                 <Link to="/about">About</Link>
               </li>
-              <li>
-                <Link to="/service">Service</Link>
-              </li>
+              {user?.email ? (
+                <>
+                  <li>
+                    <Link to="/bookings">My Bookings</Link>
+                  </li>
+                  <li>
+                    <button onClick={handleLogOut}>LogOut</button>
+                  </li>
+                </>
+              ) : (
+                <li>
+                  <Link to="/login">Login</Link>
+                </li>
+              )}
             </ul>
           </div>
           <Link to="/" className="btn btn-ghost normal-case text-xl">
@@ -49,9 +66,20 @@ const NavBar = () => {
             <li tabIndex={0}>
               <Link to="/about">About</Link>
             </li>
-            <li>
-              <Link to="/service">Service</Link>
-            </li>
+            {user?.email ? (
+              <>
+                <li>
+                  <Link to="/bookings">My Bookings</Link>
+                </li>
+                <li>
+                  <button onClick={handleLogOut}>LogOut</button>
+                </li>
+              </>
+            ) : (
+              <li>
+                <Link to="/login">Login</Link>
+              </li>
+            )}
           </ul>
         </div>
         <div className="navbar-end">
