@@ -25,7 +25,7 @@ const CheckOut = () => {
     };
     console.log(booking);
 
-    fetch("https://car-doctor-server-two-pink.vercel.app/bookings", {
+    fetch("https://car-doctor-server-zynscript.vercel.app/bookings", {
       method: "POST",
       headers: {
         "content-type": "application/json",

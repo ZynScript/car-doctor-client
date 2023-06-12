@@ -8,7 +8,7 @@ const Bookings = () => {
   const navigate = useNavigate();
   const [bookings, setBookings] = useState([]);
 
-  const url = `https://car-doctor-server-two-pink.vercel.app/bookings?email=${user?.email}`;
+  const url = `https://car-doctor-server-zynscript.vercel.app/bookings?email=${user?.email}`;
   useEffect(() => {
     fetch(url, {
       method: "GET",
@@ -29,7 +29,7 @@ const Bookings = () => {
   const handleDelete = (id) => {
     const proceed = confirm("Are You Sure You Want to delete");
     if (proceed) {
-      fetch(`https://car-doctor-server-two-pink.vercel.app/bookings/${id}`, {
+      fetch(`https://car-doctor-server-zynscript.vercel.app/bookings/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -45,7 +45,7 @@ const Bookings = () => {
   };
 
   const handleBookingConfirm = (id) => {
-    fetch(`https://car-doctor-server-two-pink.vercel.app/bookings/${id}`, {
+    fetch(`https://car-doctor-server-zynscript.vercel.app/bookings/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
